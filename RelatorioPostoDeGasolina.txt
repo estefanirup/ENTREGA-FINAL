@@ -1,0 +1,21 @@
+ARQUIVO COM TODAS AS INFORMAÇÕES:
+
+ Total de combustível= 200.00
+ Valor do combustível= 3.00
+ Tamanho máximo da fila= 3
+ Lucro com os abastecimentos= 1200.00
+ Carros abastecidos= 2
+ Litros abastecidos= 400.00
+
+
+VEÍCULOS ATENDIDOS: 2
+Cliente: cliente 1
+Modelo do veículo: modelo 1
+Cor do veículo: cor 1
+
+Cliente: cliente 3 
+Modelo do veículo: modelo 3
+Cor do veículo: cor 3
+
+
+VEÍCULOS NA FILA: 0
