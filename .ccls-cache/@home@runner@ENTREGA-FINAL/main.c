@@ -96,7 +96,7 @@ int main() {
             /* Validação para quando um carro deseja abastecer uma quantidade
                maior de litros do que a disponível */
             printf(RED "Não há combustível suficiente para esse "
-                       "abastecimento.\n" WHITE);
+                       "abastecimento.\" WHITE);
             printf(MAGENTA "\n-> " WHITE"Litros disponiveis: %.2lf\n", totalComb);
             printf(MAGENTA "\n-> " WHITE
                            "Deseja abastecer a quantidade total de litros "
