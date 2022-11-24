@@ -32,7 +32,7 @@ int main() {
   filaAtendidos = (struct Tcarro *)malloc(1 * sizeof(struct Tcarro));
 
   while (opcao1 != 5) {
-    //getchar();
+
     system("clear");
     opcao2 = 0;
 
@@ -73,13 +73,28 @@ int main() {
       if (tamFila != 0) { // verificação se há veículos na fila
 
         if (totalComb != 0) { // verificação se há combustível
-          printf(MAGENTA "\n-> " WHITE
-                         "Informe quantos litros gostaria de abastecer: ");
-          scanf("%f", &litrosAbas);
+          while (litrosAbas <= 0) {
+            printf(MAGENTA "\n-> " WHITE
+                           "Informe quantos litros gostaria de abastecer: ");
+            scanf("%f", &litrosAbas);
+
+            if (litrosAbas <= 0) {
+              printf(RED "Valor inválido" WHITE);
+              system("clear");
+            }
+          }
 
           // verificação se há a quantidade que o cliente deseja abastecer
           if (litrosAbas <= totalComb) {
-
+            if (litrosAbas == totalComb) {
+              printf(
+                  RED
+                  "\nATENÇÃO:" YELLOW
+                  " Esse veículo acaba de abastecer o total de "
+                  "combustível disponível.\nCom isso, na próxima tentativa de "
+                  "abstecimento, todos os veículos da fila poderão ser" RED
+                  " LIBERADOS!\n" WHITE);
+            }
             // alocação
             filaAtendidos = (struct Tcarro *)realloc(
                 filaAtendidos, (carrosAbastecidos + 1) * sizeof(struct Tcarro));
@@ -92,21 +107,21 @@ int main() {
                              &lucroComb, &tamFila, valorAbas);
 
           } else {
-
             /* Validação para quando um carro deseja abastecer uma quantidade
                maior de litros do que a disponível */
             printf(RED "Não há combustível suficiente para esse "
                        "abastecimento.\n" WHITE);
-            printf(MAGENTA "\n-> " WHITE"Litros disponiveis: %.2lf\n", totalComb);
+            printf(MAGENTA "\n-> " WHITE "Litros disponiveis: %.2lf\n",
+                   totalComb);
             printf(MAGENTA "\n-> " WHITE
                            "Deseja abastecer a quantidade total de litros "
                            "disponiveis (s/n)? \n" WHITE);
             printf(
-                YELLOW
-                "ATENÇÃO: Se for abastecido, não haverá mais "
+                RED
+                "ATENÇÃO:" YELLOW " Se for abastecido, não haverá mais "
                 "combustível disponível\n         e, na próxima tentativa de "
-                "abstecimento, os veículos da fila poderão ser "
-                "liberados!\n" WHITE);
+                "abstecimento, todos os veículos da fila poderão ser" RED
+                " LIBERADOS!\n" WHITE);
             scanf(" %s", &opLitro);
             system("clear");
 
@@ -139,6 +154,7 @@ int main() {
         printf(RED "A fila está vazia, nenhum carro foi abastecido." WHITE);
       }
 
+      litrosAbas=0;
       getchar();
       break;
 

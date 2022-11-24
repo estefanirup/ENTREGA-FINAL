@@ -23,6 +23,8 @@ void totalDeCombustivel(float *combTotal) {
     if (*combTotal <= 0) {
       printf(RED "Valor não aceito.\n" WHITE);
       getchar();
+      getchar();
+      system("clear");
     }
   }
 }
@@ -37,6 +39,8 @@ void valorDoCombustivel(float *combValor) {
     if (*combValor <= 0) {
       printf(RED "Valor não aceito.\n" WHITE);
       getchar();
+      getchar();
+      system("clear");
     }
   }
 }
@@ -49,6 +53,8 @@ void tamMaxFila(int *filaMax) {
     if (*filaMax <= 0) {
       printf(RED "Valor não aceito.\n" WHITE);
       getchar();
+      getchar();
+      system("clear");
     }
   }
 }
@@ -170,7 +176,7 @@ void abastecerVeiculo(float abasLitros, float combValor, struct Tcarro filaA[],
 
   // movimentação das informações do veículo atendido
   filaA[*abasCarros] = filaE[0];
-  
+
   *abasCarros = *abasCarros + 1;
   *combLucro = (*totalAbasLitros * combValor);
 
