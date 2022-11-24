@@ -65,10 +65,9 @@ void fimDoCombustivel(float *combTotal, int *filaTam, float *totalComb) {
   printf(MAGENTA "\n-> " WHITE
                  "Deseja fornecer um novo total de litros disponíveis "
                  "(s/n)? \n" WHITE);
-  printf(
-      YELLOW
-      "ATENÇÃO: Ao não informar um novo total, todos os veículos da fila serão "
-      "liberados! \n" WHITE);
+  printf(RED
+                "ATENÇÃO: " YELLOW  "Ao não informar um novo total, todos os veículos da fila serão" RED
+                " LIBERADOS!\n" WHITE);
   scanf(" %s", &combResp);
   printf("\n");
 
